@@ -33,17 +33,6 @@
             <i class="fas fa-server"></i>
           </template>
           <b-dropdown-text class="small text-secondary">STORAGE</b-dropdown-text>
-          <b-dropdown-item @click="switchToCloudStorage">
-            <div class="dropdown-group">
-              <i
-                class="fas fa-check text-primary"
-                :style="{ visibility: isCloud ? 'visible' : 'hidden' }"
-              ></i>
-              <div class="text">
-                <div class="title">Obico Cloud</div>
-              </div>
-            </div>
-          </b-dropdown-item>
           <b-dropdown-item
             v-for="printer in printers"
             :key="printer.id"
@@ -62,6 +51,17 @@
                 >
                   {{ printer.browsabilityText() }}
                 </div>
+              </div>
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item @click="switchToCloudStorage">
+            <div class="dropdown-group">
+              <i
+                class="fas fa-check text-primary"
+                :style="{ visibility: isCloud ? 'visible' : 'hidden' }"
+              ></i>
+              <div class="text">
+                <div class="title">Obico Cloud</div>
               </div>
             </div>
           </b-dropdown-item>
